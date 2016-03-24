@@ -57,7 +57,7 @@
                 var image = lazyLoader.cache[i];
                 var imagePosition = getOffsetTop(image);
                 var imageHeight = image.height || 0;
-                console.log(imagePosition, range.min, imageHeight, range.max);
+
                 if ((imagePosition >= range.min - imageHeight) && (imagePosition <= range.max)) {
                     var mobileSrc = image.getAttribute('data-src-mobile');
 
@@ -137,15 +137,13 @@
         }
     }
 
+    // get the right mobile height
     function getAvailHeight() {
-        return (window.screen && window.screen.availHeight) || window.outerHeight;
+        var h = (window.screen && window.screen.availHeight) || window.outerHeight,
+            w = (window.screen && window.screen.availWidth) || window.outerWidth;
+        return Math.max(h, w);
     }
     lazyLoader.mobileScreenSize = getAvailHeight();
-    addEventListener("orientationchange", function() {
-        lazyLoader.mobileScreenSize = getAvailHeight();
-        console.log(lazyLoader.mobileScreenSize);
-    })
 
     return lazyLoader;
-    // lazyLoader.init();
 });

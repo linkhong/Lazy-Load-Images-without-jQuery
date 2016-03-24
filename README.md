@@ -6,7 +6,7 @@ Based on code from [Mike Pulaski](http://www.mikepulaski.com/code/2012/06/29/laz
 
 # Usage
 
-1) Include `lazyload.min.js` or inline it.
+1) Include `lazyload.js` or inline it or import or require it.
 
 2) Add `.lazy-load` and `data-src` to each of your `<img>` tags. Optionally add `data-src-mobile`, a placeholder src, and a fallback image.
 
@@ -30,6 +30,11 @@ Based on code from [Mike Pulaski](http://www.mikepulaski.com/code/2012/06/29/laz
 .lazy-loaded { opacity: 1; }
 ```
 
+4) Manually run the plugin. If there is any new images you justed appended into the DOM, just run again.
+
+```
+    lazyload.run();
+```
 # Demo
 
 http://kaizau.github.com/Lazy-Load-Images-without-jQuery/
